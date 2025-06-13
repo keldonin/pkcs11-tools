@@ -53,7 +53,7 @@ if [ -d .git ]; then
     if (automake --version  | head -1 | grep -q 1\.13); then
 	echo "Automake 1.13 detected, using an older, compatible version of gnulib"
 	cd .gnulib
-	git checkout 34e1754363b105180e7a85d319c2e1f464b93fb2
+	git checkout stable-202501
 	cd ..
     fi
 else
