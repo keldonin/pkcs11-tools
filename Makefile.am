@@ -12,13 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# point to the current published version of PKCS#11 header files
+oasis_pkcs11_includedir = include/oasis-pkcs11/published/3-01
+
+# pass the value to the subdirectories
+AM_MAKEFLAGS = OASIS_PKCS11_INCLUDEDIR="$(oasis_pkcs11_includedir)"
+
 EXTRA_DIST = \
 	m4/ax_create_target_h.m4 \
 	m4/ax_lib_socket_nsl.m4  \
 	m4/ax_with_dmalloc.m4	 \
 	include/cryptoki	 \
 	include/pkcs11lib.h      \
-	include/oasis-pkcs11/working/3-00-current \
+	$(oasis_pkcs11_includedir) \
 	with_beid	         \
 	with_luna	         \
 	with_nfast               \

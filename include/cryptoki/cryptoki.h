@@ -95,7 +95,8 @@
 #pragma pack(push, cryptoki, 1)
 #endif
 
-/* The standard RSA supplied header */
+/* The standard OASIS-TC supplied header */
+#include "pkcs11t.h"
 #include "pkcs11.h"
 
 /* Non-standard API entry points, vendor defined constants */

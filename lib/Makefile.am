@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 SUFFIXES = .c .h .y .l
 
 ACLOCAL_AMFLAGS= -I m4
@@ -23,7 +22,7 @@ AM_CPPFLAGS = \
 	-I$(top_builddir)/gl \
 	-I$(top_srcdir)/gl \
 	-I$(top_srcdir)/include \
-	-I$(top_srcdir)/include/oasis-pkcs11/working/3-00-current \
+	-I$(top_srcdir)/$(OASIS_PKCS11_INCLUDEDIR) \
 	-I$(top_srcdir)/include/cryptoki
 
 noinst_LTLIBRARIES = libp11.la
@@ -125,7 +124,7 @@ pkcs11_mechanism.$(OBJEXT): _mechinfo.h
 _mechinfo.h: Makefile gen_mechinfo_h.pl
 	$(AM_V_GEN) $(PERL) $(srcdir)/gen_mechinfo_h.pl \
 				$(top_srcdir)/include/cryptoki/*.h \
-				$(top_srcdir)/include/oasis-pkcs11/working/3-00-current/*.h \
+				$(top_srcdir)/$(OASIS_PKCS11_INCLUDEDIR)/*.h \
 				>$@
 
 pkcs11_attrdesc.$(OBJEXT): _attrinfo.h
@@ -133,7 +132,7 @@ pkcs11_attrdesc.$(OBJEXT): _attrinfo.h
 _attrinfo.h: Makefile gen_attrinfo_h.pl
 	$(AM_V_GEN) $(PERL) $(srcdir)/gen_attrinfo_h.pl  \
 				$(top_srcdir)/include/cryptoki/*.h \
-				$(top_srcdir)/include/oasis-pkcs11/working/3-00-current/*.h \
+				$(top_srcdir)/$(OASIS_PKCS11_INCLUDEDIR)/*.h \
 				>$@
 
 

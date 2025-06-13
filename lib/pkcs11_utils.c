@@ -214,14 +214,14 @@ CK_ATTRIBUTE_TYPE get_attribute_type(char *arg)
     } else if (strcasecmp(arg, "CKA_EC_PARAMS")==0 || strcasecmp(arg, "EC_PARAMS")==0) {
 	attrtype = CKA_EC_PARAMS;
     	/* NSS attributes */
-    } else if (strcasecmp(arg, "CKA_TRUST_SERVER_AUTH")==0 || strcasecmp(arg, "TRUST_SERVER_AUTH")==0) {
-	attrtype = CKA_TRUST_SERVER_AUTH;
-    } else if (strcasecmp(arg, "CKA_TRUST_CLIENT_AUTH")==0 || strcasecmp(arg, "TRUST_CLIENT_AUTH")==0) {
-	attrtype = CKA_TRUST_CLIENT_AUTH;
-    } else if (strcasecmp(arg, "CKA_TRUST_CODE_SIGNING")==0 || strcasecmp(arg, "TRUST_CODE_SIGNING")==0) {
-	attrtype = CKA_TRUST_CODE_SIGNING;
-    } else if (strcasecmp(arg, "CKA_TRUST_EMAIL_PROTECTION")==0 || strcasecmp(arg, "TRUST_EMAIL_PROTECTION")==0) {
-	attrtype = CKA_TRUST_EMAIL_PROTECTION;
+    } else if (strcasecmp(arg, "CKA_NSS_TRUST_SERVER_AUTH")==0 || strcasecmp(arg, "NSS_TRUST_SERVER_AUTH")==0) {
+	attrtype = CKA_NSS_TRUST_SERVER_AUTH;
+    } else if (strcasecmp(arg, "CKA_NSS_TRUST_CLIENT_AUTH")==0 || strcasecmp(arg, "NSS_TRUST_CLIENT_AUTH")==0) {
+	attrtype = CKA_NSS_TRUST_CLIENT_AUTH;
+    } else if (strcasecmp(arg, "CKA_NSS_TRUST_CODE_SIGNING")==0 || strcasecmp(arg, "NSS_TRUST_CODE_SIGNING")==0) {
+	attrtype = CKA_NSS_TRUST_CODE_SIGNING;
+    } else if (strcasecmp(arg, "CKA_NSS_TRUST_EMAIL_PROTECTION")==0 || strcasecmp(arg, "NSS_TRUST_EMAIL_PROTECTION")==0) {
+	attrtype = CKA_NSS_TRUST_EMAIL_PROTECTION;
     }
 
     return attrtype;
@@ -420,10 +420,10 @@ CK_ATTRIBUTE_PTR get_attribute_for_type_and_value(CK_ATTRIBUTE_TYPE argattrtype,
     case CKA_EXTRACTABLE:
     case CKA_SENSITIVE:
 	/* NSS-specific */
-    case CKA_TRUST_SERVER_AUTH:
-    case CKA_TRUST_CLIENT_AUTH:
-    case CKA_TRUST_CODE_SIGNING:
-    case CKA_TRUST_EMAIL_PROTECTION:
+    case CKA_NSS_TRUST_SERVER_AUTH:
+    case CKA_NSS_TRUST_CLIENT_AUTH:
+    case CKA_NSS_TRUST_CODE_SIGNING:
+    case CKA_NSS_TRUST_EMAIL_PROTECTION:
     {
 	CK_BBOOL val;
 

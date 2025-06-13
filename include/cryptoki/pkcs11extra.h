@@ -29,4 +29,8 @@
 #include "luna.h"
 #endif
 
+#if defined(HAVE_AWSCLOUDHSM)
+#include "awscloudhsm.h"
+#endif
+
 #endif /* PKCS11_EXTRA_H */
